@@ -1,4 +1,7 @@
 <h1>Products#index</h1>
+<h2>Number of Products: <%= @products.count %> </h2>
+<h2>Total Store Stock: <%= @products.sum(:stock_quantity) %> </h2>
+<h2>Average of Price: <%= @products.average(:price)%> </h2>
 
 <ul>
   <% @products.each do |product|%>
