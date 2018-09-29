@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+product = Product.new(:title => "Red Bull")
+if(!product.save)
+  puts product.errors.messages.inspect
+end
