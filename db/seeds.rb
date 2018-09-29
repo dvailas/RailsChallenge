@@ -5,7 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-product = Product.new(:title => "Red Bull")
-if(!product.save)
-  puts product.errors.messages.inspect
-end
+i = 0
+num = 677
+
+begin
+  new_product = Product.create( :title => Faker::Seinfeld.character,
+    :description => Faker::Food.description,
+    :price => Faker::Commerce.price,
+    :stock_quantity => Faker::Number.number(5))
+    i += 1
+  end while i < num
